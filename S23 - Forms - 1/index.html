@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enhanced Stock Market Form</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Basic Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        background-color: #f5f7fa;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 20px;
+      }
+
+      /* Form Elements */
+      label {
+        font-size: 0.9rem;
+        color: #666;
+        margin-bottom: 5px;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <h2 class="form-heading">Open Demat Account</h2>
+      <form action="#" method="post">
+        <!-- Fieldset with Legend for Personal Information -->
+        <fieldset class="field">
+          <legend class="leg">Personal Information</legend>
+          <label for="name">Full Name:</label>
+          <input
+            class="input1"
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Enter your full name"
+            required
+          />
+
+          <label for="email">Email Address:</label>
+          <input
+            class="input1"
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email"
+            required
+          />
+        </fieldset>
+
+        <!-- Fieldset with Legend for Investment Preferences -->
+        <fieldset class="field">
+          <legend class="leg">Investment Preferences</legend>
+
+          <!-- Investment Amount -->
+          <label for="investment">Investment Amount (₹):</label>
+          <input
+            class="input1"
+            type="number"
+            id="investment"
+            name="investment"
+            placeholder="Enter investment amount"
+            min="0"
+            required
+          />
+
+          <!-- Risk Tolerance -->
+          <label>Risk Tolerance:</label>
+          <div class="form-group-inline">
+            <label><input type="radio" name="risk" value="low" /> Low</label>
+            <label
+              ><input type="radio" name="risk" value="medium" /> Medium</label
+            >
+            <label><input type="radio" name="risk" value="high" /> High</label>
+          </div>
+        </fieldset>
+
+        <!-- Fieldset with Legend for Market Interests -->
+        <fieldset class="field">
+          <legend class="leg">Market Interests</legend>
+
+          <!-- Markets of Interest -->
+          <label>Markets of Interest:</label>
+          <div class="form-group-inline">
+            <label
+              ><input
+                type="checkbox"
+                name="market[]"
+                value="stocks"
+                class="input2"
+              />
+              Stocks</label
+            >
+            <label
+              ><input
+                type="checkbox"
+                name="market[]"
+                value="MF"
+                class="input2"
+              />
+              Mutual Funds</label
+            >
+            <label
+              ><input
+                type="checkbox"
+                name="market[]"
+                value="SIP"
+                class="input2"
+              />
+              SIPs</label
+            >
+          </div>
+
+          <!-- Preferred Stock Sector with Optgroup -->
+          <label for="sector">Preferred Stock:</label>
+          <select id="sector" name="sector" class="input1">
+            <option>Please Select a Stock</option>
+            <optgroup label="Information Technology">
+              <option>TCS</option>
+              <option>Infosys</option>
+              <option>Wipro</option>
+              <option>HCL Technologies</option>
+              <option>Tech Mahindra</option>
+              <option>L&T Infotech</option>
+            </optgroup>
+            <optgroup label="Financial Services">
+              <option>HDFC Bank</option>
+              <option>ICICI Bank</option>
+              <option>State Bank of India (SBI)</option>
+              <option>Kotak Mahindra Bank</option>
+              <option>Bajaj Finance</option>
+              <option>Axis Bank</option>
+            </optgroup>
+            <optgroup label="Healthcare and Pharmaceuticals">
+              <option>Sun Pharma</option>
+              <option>Dr. Reddy's Laboratories</option>
+              <option>Cipla</option>
+              <option>Apollo Hospitals</option>
+              <option>Lupin</option>
+              <option>Biocon</option>
+            </optgroup>
+            <optgroup label="Consumer Goods (FMCG)">
+              <option>Hindustan Unilever</option>
+              <option>ITC</option>
+              <option>Nestle India</option>
+              <option>Dabur</option>
+              <option>Godrej Consumer</option>
+              <option>Britannia</option>
+            </optgroup>
+            <optgroup label="Automobile and Auto Ancillaries">
+              <option>Maruti Suzuki</option>
+              <option>Tata Motors</option>
+              <option>Mahindra &amp; Mahindra</option>
+              <option>Hero MotoCorp</option>
+              <option>Eicher Motors</option>
+              <option>Bajaj Auto</option>
+            </optgroup>
+          </select>
+        </fieldset>
+
+        <!-- Preferred Trading Platform with Datalist -->
+        <label for="platform">Preferred Stockbroking Platform:</label>
+        <input
+          class="input1"
+          type="text"
+          id="platform"
+          name="platform"
+          list="platforms"
+          placeholder="Choose or type platform"
+        />
+        <datalist id="platforms">
+          <option value="Zerodha"></option>
+          <option value="Upstox"></option>
+          <option value="Angel One (formerly Angel Broking)"></option>
+          <option value="ICICI Direct"></option>
+          <option value="Groww"></option>
+          <option value="HDFC Securities"></option>
+          <option value="Sharekhan"></option>
+          <option value="Kotak Securities"></option>
+          <option value="Motilal Oswal"></option>
+          <option value="5Paisa"></option>
+        </datalist>
+
+        <!-- Datalist for Stock Symbols -->
+        <label for="stock">Stock Symbol:</label>
+        <input
+          class="input1"
+          type="text"
+          id="stock"
+          name="stock"
+          list="stocks"
+          placeholder="Choose or type symbol"
+        />
+        <datalist id="stocks">
+          <option value="AAPL"></option>
+          <option value="GOOGL"></option>
+          <option value="AMZN"></option>
+          <option value="TSLA"></option>
+          <option value="MSFT"></option>
+        </datalist>
+
+        <!-- Comments/Additional Info -->
+        <label for="comments">Additional Comments:</label>
+        <textarea
+          class="input1"
+          id="comments"
+          name="comments"
+          rows="4"
+          placeholder="Any additional information..."
+        ></textarea>
+
+        <!-- Buttons -->
+        <button type="submit" class="submit-btn">Submit</button>
+        <button type="reset" class="reset-btn">Reset</button>
+        <button
+          type="button"
+          class="additional-btn"
+          onclick="alert(('For more information, please visit our FAQ section.'))"
+          title="Click to know more"
+        >
+          More Info
+        </button>
+      </form>
+    </div>
+  </body>
+</html>
